@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/styles.css">
+   <script type="text/javascript" src="https://mbostock.github.com/d3/d3.js?2.1.3"></script>
+   <script src="js/indexjs.js"></script>
+   <script src="js/script.js"></script>
+   <title>WASABI D3.JS</title>
+</head>
+<body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+
+
+<div id='cssmenu'>
+<ul>
+   <li ><a href='index.html'>Home</a></li>
+   <li><a href='#'>Comparing artists</a></li>
+   <li class='active'><a  href='#'>Show artist</a></li>
+
+</ul>
+</div>
+
+<div>
+   <h2>
+      SEARCH AN ARTIST
+
+   </h2></div>
+<div>
+    <input type="text" id="name" name="name"><br></br>
+  <button onClick="search();">SEARCH</button> 
+</div>
+<br></br>
+<div id="details">
+   <div class="card">
+      <img src=""  style="width:10%" id='aimg'>
+      <div class="container">
+        <h4 id="aname"></h4>
+        <h1>ALBUMS</h1>
+<div id="slider">
+   <button id="precedent" onclick="ChangeSlide(-1)">Previous</button>
+
+    <img src="" id="slide">
+    
+      <button id="suivant" onclick="ChangeSlide(1)">Next</button>
+      <p id="demo"></p>
+
+</div>
+      </div>
+
+    </div>
+</div>
+
+
+
+
+</body>
+<html>

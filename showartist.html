@@ -4,6 +4,8 @@
    <meta charset='utf-8'>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
    <link rel="stylesheet" href="css/styles.css">
    <script type="text/javascript" src="https://mbostock.github.com/d3/d3.js?2.1.3"></script>
    <script src="js/indexjs.js"></script>
@@ -33,7 +35,7 @@
   <button onClick="search();">SEARCH</button> 
 </div>
 <br></br>
-<div id="details">
+<div id="details" style="display: none;">
    <div class="card">
       <img src=""  style="width:10%" id='aimg'>
       <div class="container">
@@ -44,7 +46,7 @@
 
     <img src="" id="slide">
     
-      <button id="suivant" onclick="ChangeSlide(1)">Next</button>
+      <button id="suivant" onclick="ChangeSlide(1)">Next</button><br></br>
       <p id="demo"></p>
 
 </div>

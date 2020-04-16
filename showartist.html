@@ -19,27 +19,28 @@
 <div id='cssmenu'>
 <ul>
    <li ><a href='index.html'>Home</a></li>
-   <li><a href='#'>Comparing artists</a></li>
+   <li><a href='comparingartists.html'>Comparing artists</a></li>
    <li class='active'><a  href='#'>Show artist</a></li>
 
 </ul>
 </div>
-
-<div>
-   <h2>
+<br></br>
+<div class="text-center">
+   <h3>
       SEARCH AN ARTIST
 
-   </h2></div>
-<div>
+   </h3></div>
+<div class="text-center" >
     <input type="text" id="name" name="name"><br></br>
   <button onClick="search();">SEARCH</button> 
 </div>
 <br></br>
-<div id="details" style="display: none;">
+<div id="details" class="text-center" style="display: none;">
    <div class="card">
-      <img src=""  style="width:10%" id='aimg'>
-      <div class="container">
-        <h4 id="aname"></h4>
+      <img src=""  class="rounded float-left" style="width:10%" id='aimg'>
+      <h4 id="aname"></h4>
+      <div class="container" class="text-center">
+        
         <h1>ALBUMS</h1>
 <div id="slider">
    <button id="precedent" onclick="ChangeSlide(-1)">Previous</button>

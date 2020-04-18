@@ -106,10 +106,18 @@ for(i=0; i<data.length;i++){
 txt += '</tbody>'+
 '</table>';
 
-document.getElementById("demo").innerHTML = txt;}
+document.getElementById("demo").innerHTML = txt;
+if(data.length>1){
+
+  document.getElementById("demo1").innerHTML ='<button onClick="'+'comparing();'+'">COMPARING</button>'; 
+
+}
+
+}
 
 
 function comparing(){
+  
   document.getElementById("my_dataviz").innerHTML ="<span>Number of Deezer Fans</span>";
 
 // set the dimensions and margins of the graph

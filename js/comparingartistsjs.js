@@ -3,7 +3,11 @@ var data=[];
 
 
 function add(){
-var name = document.getElementById("li").value;
+
+
+var name = document.getElementById("autoComplete").value;
+
+
 d3.json("https://wasabi.i3s.unice.fr/search/artist/"+name, function(mydata) {
 data.push(mydata);
 
@@ -77,7 +81,7 @@ svg.selectAll("myline")
   .data(data)
   .enter()
   .append("line")
-    .attr("x1", function(d) { return x(d.deezerFans); })
+    .attr("x1", function(d) { return x(d.deezerFans/10); })
     .attr("x2", x(0))
     .attr("y1", function(d) { return y(d.name); })
     .attr("y2", function(d) { return y(d.name); })
@@ -88,7 +92,7 @@ svg.selectAll("mycircle")
   .data(data)
   .enter()
   .append("circle")
-    .attr("cx", function(d) { return x(d.deezerFans); })
+    .attr("cx", function(d) { return x(d.deezerFans/10); })
     .attr("cy", function(d) { return y(d.name); })
     .attr("r", "4")
     .style("fill", "#69b3a2")
@@ -129,7 +133,7 @@ svg.append("g")
 
 // Add Y axis
 var y = d3.scaleLinear()
-  .domain([0, 10])
+  .domain([0, 100])
   .range([ height, 0]);
 svg.append("g")
   .call(d3.axisLeft(y));
@@ -143,10 +147,6 @@ svg.selectAll("mybar")
     .attr("y", function(d) { return y(d.albums.length); })
     .attr("width", x.bandwidth())
     .attr("height", function(d) { return height - y(d.albums.length); })
-    .attr("fill", "#69b3a2")
-
-
-
-
+    .attr("fill", "#69b3a2");
 }
 

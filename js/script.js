@@ -2,7 +2,7 @@
 var mydata;
 
 function search(){
-var name = document.getElementById("name").value;
+    var name = document.getElementById("autoComplete").value;
 
 d3.json("https://wasabi.i3s.unice.fr/search/artist/"+name, function(data) {
 console.log(data);

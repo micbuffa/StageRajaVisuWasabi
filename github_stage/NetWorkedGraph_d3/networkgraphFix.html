@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.links line {
+  stroke: #aaa;
+}
+
+.nodes circle {
+  pointer-events: all;
+  stroke: none;
+  stroke-width: 40px;
+}
+
+</style>
+<body>
+<button onclick="show()">Show the network graph</button>
+<br>
+
+<svg width="960" height="600"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+
+function show()  {
+color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2));
+d3.json("https://wasabi.i3s.unice.fr/api/v1/artist_all/77488", function(error, mydata) {
+
+
+  if (error) throw error;
+
+  console.log(mydata)
+    obj=mydata;
+
+console.log(obj);
+
+var nodes=[];
+var links=[];
+
+var monTableau = Object.keys(obj).map(function(cle) {
+    return [String(cle), obj[cle]];
+});
+
+for(i=0;i<monTableau.length;i++){
+    var node=new Object();
+ node.name=monTableau[i][1].name;
+ node.id=monTableau[i][1]._id;
+ node.idparent="";
+ node.type="artist";
+ nodes.push(node);
+ 
+for(n=0;n<(monTableau[i][1].members).length;n++){
+        var node1=new Object();
+        var link1=new Object();
+         node1.name=monTableau[i][1].members[n].name;
+         node1.id=monTableau[i][1].members[n].id_member_musicbrainz;
+         node1.idparent=monTableau[i][1]._id;
+         node1.type="member of band";
+         nodes.push(node1);
+
+            link1.source=monTableau[i][1].members[n].id_member_musicbrainz;
+            link1.target=monTableau[i][1]._id;
+            link1.type="memberofband_artist";
+            links.push(link1);
+        }
+
+    for(j=0;j<(monTableau[i][1].albums).length;j++){
+        var node2=new Object();
+        var link2=new Object();
+         node2.name=monTableau[i][1].albums[j].name;
+         node2.id=monTableau[i][1].albums[j]._id;
+         node2.idparent=monTableau[i][1].albums[j].id_artist;
+         node2.type="albums";
+         nodes.push(node2);
+
+            link2.source=monTableau[i][1].albums[j]._id;
+            link2.target=monTableau[i][1].albums[j].id_artist;
+            link2.type="album_artist";
+            links.push(link2);
+
+         for(k=0;k<(monTableau[i][1].albums[j].songs).length;k++){
+            var node3=new Object();
+            var link3=new Object();
+            node3.name=monTableau[i][1].albums[j].songs[k].title;
+            node3.id=monTableau[i][1].albums[j].songs[k]._id;
+            node3.idparent=monTableau[i][1].albums[j].songs[k].id_album;
+            node3.type="songs";
+            nodes.push(node3);
+
+            link3.source=monTableau[i][1].albums[j].songs[k]._id;
+            link3.target=monTableau[i][1].albums[j].songs[k].id_album;
+            link3.type="song_album";
+            links.push(link3);
+         
+         }
+    }
+
+}
+
+console.log(nodes);
+console.log(links);
+
+
+graph=new Object();
+
+graph.nodes=nodes;
+graph.links=links;
+
+//console.log(myarray);
+
+//var data = JSON.stringify(myarray);
+
+console.log(graph);
+
+  var link = svg.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line");
+
+    
+
+  var node = svg.append("g")
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", 4)
+      .style("fill", function(d) { return color(d.type); })
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+  node.append("title")
+      .text(function(d) { return "Name : "+d.name + "  type : " +d.type; });
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  }
+
+
+});
+/*function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}*/
+
+function dragstarted(d) {
+    currentX = d.x;
+    currentY = d.y;
+}
+
+/*function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}*/
+function dragged(d) {
+    d.px = (d.px > currentX + 50) ? currentX + 50 : d.px;
+    d.py = (d.py > currentY + 50) ? currentY + 50 : d.py;
+    d.px = (d.px < currentX - 50) ? currentX - 50 : d.px;
+    d.py = (d.py < currentY - 50) ? currentY - 50 : d.py;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}}
+
+</script>
+</body>
+</html>

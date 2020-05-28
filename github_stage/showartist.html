@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="css/styles.css">
+   <script type="text/javascript" src="https://mbostock.github.com/d3/d3.js?2.1.3"></script>
+   <script src="js/indexjs.js"></script>
+   <script src="js/script.js"></script>
+   <title>WASABI D3.JS</title>
+</head>
+<body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+
+
+<div id='cssmenu'>
+<ul>
+   <li ><a href='index.html'>Home</a></li>
+   <li><a href='comparingartists.html'>Comparing artists</a></li>
+   <li class='active'><a  href='#'>Show artist</a></li>
+
+</ul>
+</div>
+<br></br>
+<div class="text-center">
+   <h3>
+      SEARCH AN ARTIST
+
+   </h3></div>
+<div class="text-center" >
+   <input id="autoComplete" tabindex="1"><br></br>
+   
+  <button onClick="search();">SEARCH</button> 
+</div>
+<br></br>
+<div id="details" class="text-center" style="display: none;">
+   <div >
+      <img src=""  class="text-center" style="width:10%" id='aimg'>
+      <h4 id="aname"></h4><br>
+      <div class="container" class="text-center">
+        
+        <h1>ALBUMS</h1>
+<div id="slider">
+   <button id="precedent" onclick="ChangeSlide(-1)">Previous</button>
+
+    <img src="" id="slide">
+    
+      <button id="suivant" onclick="ChangeSlide(1)">Next</button><br></br>
+      <p id="demo"></p>
+
+</div>
+      </div>
+
+    </div>
+</div>
+
+
+<script src="./node_modules/@tarekraafat//autocomplete.js/dist/js/autoComplete.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+   <script src="./node_modules/@tarekraafat//autocomplete.js/dist/js/index.js"></script>
+
+
+</body>
+<html>

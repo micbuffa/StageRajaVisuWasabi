@@ -172,7 +172,7 @@ console.log("this is graph : "+graph);
     .selectAll("circle")
     .data(nodes)
     .enter().append("circle")
-      .attr("r", 4)
+      .attr("r", 5)
       .style("fill", function(d) { return color(d.type); })
       .call(d3.drag()
           .on("start", dragstarted)
@@ -230,8 +230,49 @@ function dragended(d) {
   d.fx = null;
   d.fy = null;
 }
+var tip;
+  node.on("click", function(d){
+    if (tip) tip.remove();
 
+    tip  = svg.append("g")
+      .attr("transform", "translate(" + d.x  + "," + d.y + ")");
+
+    var rect = tip.append("rect")
+      .style("fill", "white")
+      .style("stroke", "steelblue");
+
+    tip.append("text")
+      .text("Name: " + d.name)
+      .attr("dy", "1em")
+      .attr("x", 5);
+
+    tip.append("text")
+      .text("Type: " + d.type)
+      .attr("dy", "2em")
+      .attr("x", 5);
+
+    var con = links
+      .filter(function(d1){
+        return d1.source.id === d.id;
+      })
+      .map(function(d1){
+        return d1.target.name ;
+      })
+
+    tip.append("text")
+      .text("Connected to: " + con.join(","))
+      .attr("dy", "3em")
+      .attr("x", 5);
+
+    var bbox = tip.node().getBBox();
+    rect.attr("width", bbox.width + 5)
+        .attr("height", bbox.height + 5)
+  });
+ 
+
+  
 
 
 });
+
 }

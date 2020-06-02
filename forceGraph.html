@@ -10,18 +10,19 @@
    <script type="text/javascript" src="https://mbostock.github.com/d3/d3.js?2.1.3"></script>
    <script src="js/indexjs.js"></script>
    <script src="js/script.js"></script>
+   <script src="js/forceGraphjs.js"></script>
    <title>WASABI D3.JS</title>
 </head>
 <body>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+   <script src="https://d3js.org/d3.v4.min.js"></script>
 
 
 <div id='cssmenu'>
 <ul>
    <li ><a href='index.html'>Home</a></li>
    <li><a href='comparingartists.html'>Comparing artists</a></li>
-   <li class='active'><a  href='#'>Show artist</a></li>
-   <li><a href='forceGraph.html'>Force graph</a></li>
+   <li><a href='showartist.html'>Comparing artists</a></li>
+   <li class='active'><a  href='#'>Force graph</a></li>
 
 </ul>
 </div>
@@ -34,29 +35,13 @@
 <div class="text-center" >
    <input id="autoComplete" tabindex="1"><br></br>
    
-  <button onClick="search();">SEARCH</button> 
+  <button onClick="showF();">SHOW</button> 
+  
+
 </div>
+<div><svg width="960" height="600"></svg></div>
 <br></br>
-<div id="details" class="text-center" style="display: none;">
-   <div >
-      <img src=""  class="text-center" style="width:10%" id='aimg'>
-      <h4 id="aname"></h4><br>
-      <div class="container" class="text-center">
-        
-        <h1>ALBUMS</h1>
-<div id="slider">
-   <button id="precedent" onclick="ChangeSlide(-1)">Previous</button>
 
-    <img src="" id="slide">
-    
-      <button id="suivant" onclick="ChangeSlide(1)">Next</button><br></br>
-      <p id="demo"></p>
-
-</div>
-      </div>
-
-    </div>
-</div>
 
 
 <script src="./node_modules/@tarekraafat//autocomplete.js/dist/js/autoComplete.js"></script>

@@ -1,24 +1,27 @@
 
+function showmemberofband(){
 
 
-function showF(){
+  d3.selectAll("svg").remove();
+  var width = 674;
+  var height = 600;
 
-
+  //Create SVG element
+  var svg = d3.select("#ca")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
     var name = document.getElementById("autoComplete").value;
 
 
 color = d3.scaleOrdinal(d3.schemeCategory20);
-
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
     
-d3.json("https://wasabi.i3s.unice.fr/api/v1/artist_all/name/The%20Rolling%20Stones", function(error, mydata) {
+d3.json("https://wasabi.i3s.unice.fr/api/v1/artist_all/name/"+name, function(error, mydata) {
 
 
  if (error) throw error;
@@ -56,10 +59,180 @@ for(n=0;n<obj.members.length;n++){
             link1.type="memberofband_artist";
             links.push(link1);
         }
+//}
+
+console.log(nodes);
+console.log(links);
+
+console.log( JSON.stringify(nodes));
+console.log( JSON.stringify(links));
+graph=new Object();
+
+graph.nodes=[];
+graph.links=[];
+
+graph.nodes=nodes;
+graph.links=links;
+
+console.log("this is graph : "+graph);
+
+  var link = svg.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line");
+
+    
+
+  var node = svg.append("g")
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(nodes)
+    .enter().append("circle")
+      .attr("r", 5)
+      .style("fill", function(d) { return color(d.type); })
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+  node.append("title")
+      .text(function(d) { return "Name : "+d.name + "  type : " +d.type; });
+
+
+      svg.selectAll(".node")
+      .append("svg:a").attr("xlink:href", function(d){ return "index.html" });
+
+  simulation
+      .nodes(nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(links);
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  }
+
+
+//});
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+var tip;
+  node.on("click", function(d){
+    if (tip) tip.remove();
+
+    tip  = svg.append("g")
+      .attr("transform", "translate(" + d.x  + "," + d.y + ")");
+
+    var rect = tip.append("rect")
+      .style("fill", "white")
+      .style("stroke", "steelblue");
+
+    tip.append("text")
+      .text("Name: " + d.name)
+      .attr("dy", "1em")
+      .attr("x", 5);
+
+    tip.append("text")
+      .text("Type: " + d.type)
+      .attr("dy", "2em")
+      .attr("x", 5);
+
+    var con = graph.links
+      .filter(function(d1){
+        return d1.source === d.source;
+      })
+      .map(function(d1){
+        return d1.target ;
+      })
+
+    tip.append("text")
+    
+      //.text("Connected to: " + con.join(","))
+      .attr("dy", "3em")
+      .attr("x", 5);
+
+    var bbox = tip.node().getBBox();
+    rect.attr("width", bbox.width + 5)
+        .attr("height", bbox.height + 5)
+  });
+ 
+  
+  
+
+
+});
+
+
+}
+
+function showALbumsSongs(){
+
+
+  d3.selectAll("svg").remove();
+  var width = 674;
+  var height = 600;
+
+  //Create SVG element
+  var svg = d3.select("#ca")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+    var name = document.getElementById("autoComplete").value;
+
+
+color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2));
+    
+d3.json("https://wasabi.i3s.unice.fr/api/v1/artist_all/name/"+name, function(error, mydata) {
+
+
+ if (error) throw error;
+ console.log(mydata);
+    obj=mydata;
+
+console.log(obj);
+var nodes=[];
+var links=[];
+
+ var node=new Object(); // node pour artist
+ node.name=obj.name;
+ node.id=obj._id;
+ node.idparent="";
+ node.type="artist";
+ nodes.push(node);
+ 
 
     for(j=0;j<(obj.albums).length;j++){ // parcourir les albums de notre artist
-      
-/*
+   
+
         var node2=new Object(); // node pour type albums
         var link2=new Object(); // link pour type albums
         
@@ -70,62 +243,10 @@ for(n=0;n<obj.members.length;n++){
          node2.type="albums";
          nodes.push(node2);
 
-            link2.source=obj.albums[j]._id;
-            link2.target=obj._id;
-            link2.type="album_artist";
-            links.push(link2);*/
-
         for(k=0;k<(obj.albums[j].songs).length;k++){ // parcourir les chansons d'un album
 
-        if(obj.albums[j].songs[k].hasOwnProperty("producer")){
-            
-            for(m=0;m<(obj.albums[j].songs[k].producer).length;m++){
-                c=0;
-                for(t=0;t<nodes.length;t++){
-                    if(nodes[t].name==obj.albums[j].songs[k].producer[m]){
-                        c++;
-                    }
-                }
-                if(c==0){
-                var node4=new Object(); // node pour type producer
-                var link4=new Object(); // link pour type producer
-                node4.name=obj.albums[j].songs[k].producer[m];
-                node4.id=obj.albums[j].songs[k].producer[m]+"_id";
-                node4.type="Producer";
-                nodes.push(node4);
-
-                link4.source=obj.albums[j].songs[k].producer[m]+"_id"; // id de la chanson
-                link4.target=obj._id;  // id de song père
-                link4.type="album_producer";
-                links.push(link4);}}
-                }
-
-        if(obj.albums[j].songs[k].hasOwnProperty("writer")){
-
-            for(y=0;y<(obj.albums[j].songs[k].writer).length;y++){
-                 v=0;
-                for(r=0;r<nodes.length;r++){
-                    if(nodes[r].name==obj.albums[j].songs[k].writer[y]){
-                        v++;
-                    }
-                }
-                if(v==0){
-                var node5=new Object(); // node pour type writer
-                var link5=new Object(); // link pour type writer
-
-                node5.name=obj.albums[j].songs[k].writer[y];
-                node5.id=obj.albums[j].songs[k].writer[y]+"_id";
-                node5.type="Writer";
-                nodes.push(node5);
-
-                link5.source=obj.albums[j].songs[k].writer[y]+"_id"; // id de la chanson
-                link5.target=obj._id;  // id de song père
-                link5.type="album_writer";
-                links.push(link5);}
-            }
-                }
-            
-           /* var node3=new Object(); // node pour type songs
+          
+            var node3=new Object(); // node pour type songs
             var link3=new Object(); // link pour type sons
 
             node3.name=obj.albums[j].songs[k].title;
@@ -138,7 +259,7 @@ for(n=0;n<obj.members.length;n++){
             link3.source=obj.albums[j].songs[k]._id; // id de la chanson
             link3.target=obj.albums[j]._id; // id de l'album père
             link3.type="song_album";
-            links.push(link3);*/
+            links.push(link3);
     
          }
     }
@@ -182,6 +303,10 @@ console.log("this is graph : "+graph);
   node.append("title")
       .text(function(d) { return "Name : "+d.name + "  type : " +d.type; });
 
+
+      svg.selectAll(".node")
+      .append("svg:a").attr("xlink:href", function(d){ return "index.html" });
+
   simulation
       .nodes(nodes)
       .on("tick", ticked);
@@ -203,16 +328,16 @@ console.log("this is graph : "+graph);
 
 
 //});
-function dragstarted(d) {
+/*function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x;
   d.fy = d.y;
-}
+}*/
 
-/*function dragstarted(d) {
+function dragstarted(d) {
     currentX = d.x;
     currentY = d.y;
-}*/
+}
 
 function dragged(d) {
   d.fx = d3.event.x;
@@ -251,16 +376,17 @@ var tip;
       .attr("dy", "2em")
       .attr("x", 5);
 
-    var con = links
+    var con = graph.links
       .filter(function(d1){
-        return d1.source.id === d.id;
+        return d1.source === d.source;
       })
       .map(function(d1){
-        return d1.target.name ;
+        return d1.target ;
       })
 
     tip.append("text")
-      .text("Connected to: " + con.join(","))
+    
+      //.text("Connected to: " + con.join(","))
       .attr("dy", "3em")
       .attr("x", 5);
 
@@ -269,10 +395,460 @@ var tip;
         .attr("height", bbox.height + 5)
   });
  
-
+  
   
 
 
 });
+
+
+}
+
+
+
+
+function showProducerWriter(){
+
+ 
+  d3.selectAll("svg").remove();
+  var width = 674;
+  var height = 600;
+
+  //Create SVG element
+  var svg = d3.select("#ca")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+
+  var name = document.getElementById("autoComplete").value;
+
+
+color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = d3.forceSimulation()
+  .force("link", d3.forceLink().id(function(d) { return d.id; }))
+  .force("charge", d3.forceManyBody())
+  .force("center", d3.forceCenter(width / 2, height / 2));
+  
+d3.json("https://wasabi.i3s.unice.fr/api/v1/artist_all/name/"+name, function(error, mydata) {
+
+
+if (error) throw error;
+console.log(mydata);
+  obj=mydata;
+
+console.log(obj);
+var nodes=[];
+var links=[];
+
+var node=new Object(); // node pour artist
+node.name=obj.name;
+node.id=obj._id;
+node.idparent="";
+node.type="artist";
+nodes.push(node);
+
+
+  for(j=0;j<(obj.albums).length;j++){ // parcourir les albums de notre artist
+    
+      for(k=0;k<(obj.albums[j].songs).length;k++){ // parcourir les chansons d'un album
+
+      if(obj.albums[j].songs[k].hasOwnProperty("producer")){
+          
+          for(m=0;m<(obj.albums[j].songs[k].producer).length;m++){
+              c=0;
+              for(t=0;t<nodes.length;t++){
+                  if(nodes[t].name==obj.albums[j].songs[k].producer[m]){
+                      c++;
+                  }
+              }
+              if(c==0){
+              var node4=new Object(); // node pour type producer
+              var link4=new Object(); // link pour type producer
+              node4.name=obj.albums[j].songs[k].producer[m];
+              node4.id=obj.albums[j].songs[k].producer[m]+"_id";
+              node4.type="Producer";
+              nodes.push(node4);
+
+              link4.source=obj.albums[j].songs[k].producer[m]+"_id"; // id de la chanson
+              link4.target=obj._id;  // id de song père
+              link4.type="album_producer";
+              links.push(link4);}}
+              }
+
+      if(obj.albums[j].songs[k].hasOwnProperty("writer")){
+
+          for(y=0;y<(obj.albums[j].songs[k].writer).length;y++){
+               v=0;
+              for(r=0;r<nodes.length;r++){
+                  if(nodes[r].name==obj.albums[j].songs[k].writer[y]){
+                      v++;
+                  }
+              }
+              if(v==0){
+              var node5=new Object(); // node pour type writer
+              var link5=new Object(); // link pour type writer
+
+              node5.name=obj.albums[j].songs[k].writer[y];
+              node5.id=obj.albums[j].songs[k].writer[y]+"_id";
+              node5.type="Writer";
+              nodes.push(node5);
+
+              link5.source=obj.albums[j].songs[k].writer[y]+"_id"; // id de la chanson
+              link5.target=obj._id;  // id de song père
+              link5.type="album_writer";
+              links.push(link5);}
+          }
+              }
+          
+  
+       }
+  }
+//}
+
+var txt="";
+txt += '<table class="table"' +'>'+
+'<thead class="thead-dark"'+'>'+
+  '<tr>'+
+    '<th scope="col">writer/producer</th>'+ 
+    '</thead>'+
+    '<tbody>';
+
+for(i=0; i<nodes.length;i++){
+  if(nodes[i].type=="Producer"||nodes[i].type=="Writer"){
+    txt += "<tr><td>"+ nodes[i].name +"  "+ nodes[i].type+"</td></tr>" ;
+  //  txt += '<tr><td>'+'<button onClick="'+Collab(nodes[i].name,nodes[i].type);+'">ADD</button></td></tr>' ;
+  // i want when we click the button the page shows the graph of the producer or writer with all the artists collab with 
+  // but the fonction Collab() executes without clicking the button !
+  }
+}
+
+txt += '</tbody>'+
+'</table>';
+document.getElementById("demo").innerHTML = txt;
+
+console.log(nodes);
+console.log(links);
+
+console.log( JSON.stringify(nodes));
+console.log( JSON.stringify(links));
+graph=new Object();
+
+graph.nodes=[];
+graph.links=[];
+
+graph.nodes=nodes;
+graph.links=links;
+
+console.log("this is graph : "+graph);
+
+var link = svg.append("g")
+    .attr("class", "links")
+  .selectAll("line")
+  .data(graph.links)
+  .enter().append("line");
+
+  
+
+var node = svg.append("g")
+    .attr("class", "nodes")
+  .selectAll("circle")
+  .data(nodes)
+  .enter().append("circle")
+    .attr("r", 5)
+    .style("fill", function(d) { return color(d.type); })
+    .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+node.append("title")
+    .text(function(d) { return "Name : "+d.name + "  type : " +d.type; });
+
+
+    svg.selectAll(".node")
+    .append("svg:a").attr("xlink:href", function(d){ return "index.html" });
+
+simulation
+    .nodes(nodes)
+    .on("tick", ticked);
+
+simulation.force("link")
+    .links(links);
+
+function ticked() {
+  link
+      .attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+
+  node
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
+}
+
+
+});
+function dragstarted(d) {
+if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+d.fx = d.x;
+d.fy = d.y;
+}
+
+function dragged(d) {
+d.fx = d3.event.x;
+d.fy = d3.event.y;
+}
+
+
+function dragended(d) {
+if (!d3.event.active) simulation.alphaTarget(0);
+d.fx = null;
+d.fy = null;
+}
+
+
+
+}
+
+
+
+function Collab(name,type){
+
+ 
+  d3.selectAll("svg").remove();
+  var width = 674;
+  var height = 600;
+
+  //Create SVG element
+  var svg = d3.select("#ca")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+  var simulation = d3.forceSimulation()
+  .force("link", d3.forceLink().id(function(d) { return d.id; }))
+  .force("charge", d3.forceManyBody())
+  .force("center", d3.forceCenter(width / 2, height / 2));
+  if(type=="Producer"){
+
+    d3.json("https://wasabi.i3s.unice.fr/search/producer/"+name, function(error,datap) {
+      if (error) throw error;
+        console.log(datap)
+        obj=datap;
+
+        console.log(obj);
+        var nodes=[];
+        var links=[];
+
+        var monTableau = Object.keys(obj).map(function(cle) {
+            return [String(cle), obj[cle]];
+        });
+
+        for(i=0;i<monTableau.length;i++){
+            var node=new Object();
+            var link=new Object();
+            node.name=monTableau[i][1].name;
+            node.id=monTableau[i][1]._id;
+            node.idparent="";
+            node.type="artist";
+            nodes.push(node);
+
+            link.source=monTableau[i][1]._id
+            link.target=name+"_id";
+            link.type="Producer_artist";
+            links.push(link);
+          }
+console.log(nodes);
+console.log(links);
+
+
+graph=new Object();
+
+graph.nodes=nodes;
+graph.links=links;
+
+          console.log(graph);
+
+  var link = svg.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line");
+
+    
+
+  var node = svg.append("g")
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", 4)
+      .style("fill", function(d) { return color(d.type); })
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+  node.append("title")
+      .text(function(d) { return "Name : "+d.name + "  type : " +d.type; });
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  }
+
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+        
+
+
+  });
+
+  }
+  else{
+
+    
+    d3.json("https://wasabi.i3s.unice.fr/search/writer/"+name, function(error,datap) {
+      if (error) throw error;
+        console.log(datap)
+        obj=datap;
+
+        console.log(obj);
+        var nodes=[];
+        var links=[];
+
+        var monTableau = Object.keys(obj).map(function(cle) {
+            return [String(cle), obj[cle]];
+        });
+
+        for(i=0;i<monTableau.length;i++){
+            var node=new Object();
+            var link=new Object();
+            node.name=monTableau[i][1].name;
+            node.id=monTableau[i][1]._id;
+            node.idparent="";
+            node.type="artist";
+            nodes.push(node);
+
+            link.source=monTableau[i][1]._id
+            link.target=name+"_id";
+            link.type="Producer_artist";
+            links.push(link);
+          }
+console.log(nodes);
+console.log(links);
+
+
+graph=new Object();
+
+graph.nodes=nodes;
+graph.links=links;
+
+          console.log(graph);
+
+  var link = svg.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line");
+
+    
+
+  var node = svg.append("g")
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", 4)
+      .style("fill", function(d) { return color(d.type); })
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+  node.append("title")
+      .text(function(d) { return "Name : "+d.name + "  type : " +d.type; });
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  }
+
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+        
+
+
+  });
+
+
+
+
+
+
+  }
+
+
 
 }

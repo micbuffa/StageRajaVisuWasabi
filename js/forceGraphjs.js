@@ -520,7 +520,7 @@ for(i=0; i<nodes.length;i++){
     txt += "<tr><td>"+ nodes[i].name +"  "+ nodes[i].type+"</td></tr>" ;
   //  txt += '<tr><td>'+'<button onClick="'+Collab(nodes[i].name,nodes[i].type);+'">ADD</button></td></tr>' ;
   // i want when we click the button the page shows the graph of the producer or writer with all the artists collab with 
-  // but the fonction Collab() executes without clicking the button !
+  // but the fonction Collab() "line 618" executes without clicking the button !
   }
 }
 

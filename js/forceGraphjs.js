@@ -517,8 +517,8 @@ txt += '<table class="table"' +'>'+
 
 for(i=0; i<nodes.length;i++){
   if(nodes[i].type=="Producer"||nodes[i].type=="Writer"){
-    txt += "<tr><td>"+ nodes[i].name +"  "+ nodes[i].type+"</td></tr>" ;
-    txt += '<tr><td>'+'<button onClick="Collab(nodes[i].name,nodes[i].type);">Show collabs</button></td></tr>' ;
+    txt += '<tr><td>'+ nodes[i].name +' '+ nodes[i].type+'</td></tr>' ;
+    txt += '<tr><td><button onClick="Collab(\''+nodes[i].name+'\',\''+nodes[i].type+'\');">Show collabs</button></td></tr>' ;
   // i want when we click the button the page shows the graph of the producer or writer with all the artists collab with 
   // but the fonction Collab() "line 618" executes without clicking the button !
   }
@@ -632,16 +632,25 @@ function Collab(name,type){
   .force("link", d3.forceLink().id(function(d) { return d.id; }))
   .force("charge", d3.forceManyBody())
   .force("center", d3.forceCenter(width / 2, height / 2));
+
   if(type=="Producer"){
 
     d3.json("https://wasabi.i3s.unice.fr/search/producer/"+name, function(error,datap) {
       if (error) throw error;
         console.log(datap)
         obj=datap;
-
+        
+    
         console.log(obj);
         var nodes=[];
         var links=[];
+
+        var nodep=new Object();
+        nodep.name=name;
+        nodep.id=name+"_id";
+        nodep.idparent="";
+        nodep.type="producer";
+        nodes.push(nodep);
 
         var monTableau = Object.keys(obj).map(function(cle) {
             return [String(cle), obj[cle]];
@@ -738,16 +747,25 @@ function dragended(d) {
 
   }
   else{
-
+    
     
     d3.json("https://wasabi.i3s.unice.fr/search/writer/"+name, function(error,datap) {
       if (error) throw error;
         console.log(datap)
         obj=datap;
 
+        
+
         console.log(obj);
         var nodes=[];
         var links=[];
+
+        var nodew=new Object();
+        nodew.name=name;
+        nodew.id=name+"_id";
+        nodew.idparent="";
+        nodew.type="writer";
+        nodes.push(nodew);
 
         var monTableau = Object.keys(obj).map(function(cle) {
             return [String(cle), obj[cle]];

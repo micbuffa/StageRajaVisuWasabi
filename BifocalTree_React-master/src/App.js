@@ -1,15 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TaskTree from './components/TaskTree';
 
-import Fetchart from './components/Fetchart';
 
 function App() {
-  
   return (
     <div className="App">
       <header className="App-header">
-        <Fetchart></Fetchart>
+        <TaskTree></TaskTree>
       </header>
     </div>
   );

@@ -4,12 +4,7 @@ import wasabicontext from "./json/wasabicontext.json"
 import { cluster, schemeSet3, range, map } from 'd3';
 import RotationValueForm from './RotationValueForm';
 
-
-
-
 const TaskTree = (props) => {
-    var dataRoot1=[];
-    dataRoot1=props.res;
     let testPromise = 0;
 
     let tree_layout;
@@ -54,10 +49,15 @@ const TaskTree = (props) => {
     let test = 0
 
     const tooltipGap = 20;
+    const customJson =
+   [{"id":0,"type":"Artist","name":"Metallica","children":[{"id":3,"name":"Dave Mustaine","type":"producer"},{"id":4,"name":"Jon Zazula","type":"producer"},{"id":5,"name":"Lars Ulrich","type":"writer"},{"id":6,"name":"Diamond Head (band)","type":"producer"},{"id":7,"name":"Metallica","type":"producer"},{"id":8,"name":"Flemming Rasmussen","type":"producer"},{"id":9,"type":"writer"},{"id":11,"name":"Cliff Burton","type":"writer"},{"id":14,"name":"James Hetfield","type":"writer"},{"id":16,"name":"Bob Rock","type":"producer"},{"id":17,"name":"Mike Peden","type":"producer"},{"id":18,"name":"Michael Kamen","type":"producer"},{"id":22,"name":"Kirk Hammett","type":"writer"},{"id":24,"name":"Tony Cohen","type":"producer"},{"id":25,"name":"Blue Öyster Cult","type":"producer"},{"id":26,"name":"Sandy Pearlman","type":"writer"},{"id":27,"name":"Jerry Garcia","type":"writer"},{"id":28,"name":"Mark Whitaker (record producer)","type":"producer"},{"id":29,"name":"Al Kooper","type":"producer"},{"id":30,"name":"Budgie (band)","type":"producer"},{"id":31,"name":"Burke Shelley","type":"writer"},{"id":35,"name":"Rick Rubin","type":"producer"},{"id":36,"name":"Robert Trujillo","type":"writer"}]}]
     
-
-  
-    const customJson = [
+        const dataRoot1 =[{"id":1,"type":"Artist","name":"Metallica","children":[{"id":2,"name":"Kill 'Em All","type":"Albums"},{"id":10,"name":"Ride The Lightning","type":"Albums"},{"id":12,"name":"Master Of Puppets","type":"Albums"},{"id":13,"name":"...And Justice For All","type":"Albums"},{"id":15,"name":"Metallica","type":"Albums"},{"id":19,"name":"Live Shit: Binge & Purge","type":"Albums"},{"id":20,"name":"Load","type":"Albums"},{"id":21,"name":"ReLoad","type":"Albums"},{"id":23,"name":"Garage Inc.","type":"Albums"},{"id":32,"name":"S&M","type":"Albums"},{"id":33,"name":"St. Anger","type":"Albums"},{"id":34,"name":"Death Magnetic","type":"Albums"},{"id":37,"name":"Lulu","type":"Albums"},{"id":38,"name":"Singles","type":"Albums"},{"id":39,"name":"Other Releases","type":"Albums"},{"id":40,"name":"Other Songs","type":"Albums"}]}]
+    
+        const dataRoot3 = [{"id":0,"type":"Producer","name":"","children":[{"id":1,"name":"Megadeth","type":"artist"},{"id":2,"name":"World Under Blood","type":"artist"},{"id":3,"name":"Arch Enemy","type":"artist"},{"id":4,"name":"Metallica","type":"artist"}]}]
+        const dataRoot2=[{"id":0,"type":"Producer","name":"","children":[{"id":1,"name":"Metallica","type":"artist"}]}]
+        const dataRoot5=[ {"id":0,"type":"Producer","name":"","children":[{"id":1,"name":"Metallica","type":"artist"},{"id":2,"name":"Apocalyptica","type":"artist"},{"id":3,"name":"Motörhead","type":"artist"},{"id":4,"name":"Paul Young","type":"artist"},{"id":5,"name":"Richard Cheese And Lounge Against The Machine","type":"artist"},{"id":6,"name":"Nickelback","type":"artist"},{"id":7,"name":"Bif Naked","type":"artist"},{"id":8,"name":"Declan Galbraith","type":"artist"},{"id":9,"name":"Lissie","type":"artist"},{"id":10,"name":"Hank Williams, Jr.","type":"artist"},{"id":11,"name":"Lynyrd Skynyrd","type":"artist"}]}]
+   /* const customJson = [
         {
             id: 1,
             type: "Author",
@@ -149,9 +149,7 @@ const TaskTree = (props) => {
         },
     ]
 
-   
-    
-    /* [
+    const dataRoot1 = [
         {
             id: 1,
             type: "Author",
@@ -213,7 +211,7 @@ const TaskTree = (props) => {
                 }
             ]
         }
-    ]*/
+    ]
 
     const dataRoot2 = [
         {
@@ -291,7 +289,7 @@ const TaskTree = (props) => {
                 id: 26,
                 type: "Author",
             }]
-    }]
+    }]*/
 
     const buildTree = () => {
     }
@@ -582,7 +580,7 @@ const TaskTree = (props) => {
 
 
     }
-   
+
     const updateDetail = (source) => {
 
         var diagonal = d3.svg.diagonal.radial()
@@ -590,15 +588,13 @@ const TaskTree = (props) => {
                 return [d.y, d.x]
             })
         var nodesDetail = tree_layoutDetail.nodes(rootDetails)
-        
-       
+
 
         switch (partialContextArray.id) {
             case 1:
-                
                 nodesDetail = tree_layoutDetail.nodes(dataRoot1[0]);
                 break;
-           case 2:
+            case 2:
                 nodesDetail = tree_layoutDetail.nodes(dataRoot2[0]);
                 break;
             case 3:
@@ -847,83 +843,81 @@ const TaskTree = (props) => {
         setPartialContextArray(wasabicontext[0]);
     }, []);
 
+    useEffect(() => {
 
-useEffect(() => {
+        map = rangeMap;
 
-    map = rangeMap;
+        svg = d3.select(".contextArea")
 
-    svg = d3.select(".contextArea")
+        detailSVG = d3.select(".detailArea")
 
-    detailSVG = d3.select(".detailArea")
+        tree_layout = d3.layout.tree()
+            .size([Math.PI * circleAngle / 180, radius])
+            .separation(function (a, b) { return (a.parent === b.parent ? 1 : 2) / a.depth })
 
-    tree_layout = d3.layout.tree()
-        .size([Math.PI * circleAngle / 180, radius])
-        .separation(function (a, b) { return (a.parent === b.parent ? 1 : 2) / a.depth })
-
-    tree_layoutDetail = d3.layout.tree()
-        .size([Math.PI * detailCircleAngle / 180, detailRadius])
-        .separation(function (a, b) { return (a.parent === b.parent ? 1 : 2) / a.depth })
-
+        tree_layoutDetail = d3.layout.tree()
+            .size([Math.PI * detailCircleAngle / 180, detailRadius])
+            .separation(function (a, b) { return (a.parent === b.parent ? 1 : 2) / a.depth })
 
 
-    rootDetails = dataRoot1[0];
 
-    // Should use a Deep Copy of the data
-    // partialContextArray = JSON.parse(JSON.stringify(wasabicontext[0]))
+        rootDetails = dataRoot1[0];
 
-
-    if (partialContextArray._children && partialContextArray._children.length !== 0) {
-        partialContextArray.children = partialContextArray._children.slice(rangeMap.get(partialContextArray.id), parseInt(rangeMap.get(partialContextArray.id)) + parseInt(quantityNodeValue));
-    } else {
-        partialContextArray._children = partialContextArray.children;
-        map.set(partialContextArray.id, 0)
-        setRangeMap(map);
-    }
-    try {
-        setChildrenNumber(partialContextArray._children.length);
-        partialContextArray.children = partialContextArray._children.slice(rangeMap.get(partialContextArray.id), parseInt(rangeMap.get(partialContextArray.id)) + parseInt(quantityNodeValue));
-    } catch (error) {
-    }
+        // Should use a Deep Copy of the data
+        // partialContextArray = JSON.parse(JSON.stringify(wasabicontext[0]))
 
 
-    updateContext(partialContextArray);
+        if (partialContextArray._children && partialContextArray._children.length !== 0) {
+            partialContextArray.children = partialContextArray._children.slice(rangeMap.get(partialContextArray.id), parseInt(rangeMap.get(partialContextArray.id)) + parseInt(quantityNodeValue));
+        } else {
+            partialContextArray._children = partialContextArray.children;
+            map.set(partialContextArray.id, 0)
+            setRangeMap(map);
+        }
+        try {
+            setChildrenNumber(partialContextArray._children.length);
+            partialContextArray.children = partialContextArray._children.slice(rangeMap.get(partialContextArray.id), parseInt(rangeMap.get(partialContextArray.id)) + parseInt(quantityNodeValue));
+        } catch (error) {
+        }
 
-    // /**
-    //  * 
-    //  * Mouse down and mouseMove behavior to navigate between hidden node as if we were turning a wheel.
-    //  */
-    // d3.select(".vertical_chart").on("mousedown", function (event) {
-    //     var w = d3.select(window)
-    //         .on("mousemove", mousemove)
-    //         .on("mouseup", mouseup);
-    //     d3.event.preventDefault(); // disable text dragging
-    //     let mouseDownPos = d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0];
-    //     let rotateNode = false
-    //     function mousemove() {
-    //         if ((d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0] - mouseDownPos) / 30 > 1) {
-    //             rotateNode = true;
-    //             test += parseInt(clusterRotationValue)
-    //             mouseDownPos = d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0]
-    //         }
-    //         if ((d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0] - mouseDownPos) / 30 < -1) {
-    //             rotateNode = true;
-    //             test -= parseInt(clusterRotationValue)
-    //             mouseDownPos = d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0]
-    //         }
-    //         if (rotateNode) {
-    //             rotateNode = false
-    //             partialContextArray.children = root.children.slice(test, parseInt(test) + parseInt(quantityNodeValue));
-    //             update(partialContextArray);
-    //         }
-    //     }
 
-    //     function mouseup() {
-    //         w.on("mousemove", null).on("mouseup", null);
-    //     }
-    // })
+        updateContext(partialContextArray);
 
-});
+        // /**
+        //  * 
+        //  * Mouse down and mouseMove behavior to navigate between hidden node as if we were turning a wheel.
+        //  */
+        // d3.select(".vertical_chart").on("mousedown", function (event) {
+        //     var w = d3.select(window)
+        //         .on("mousemove", mousemove)
+        //         .on("mouseup", mouseup);
+        //     d3.event.preventDefault(); // disable text dragging
+        //     let mouseDownPos = d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0];
+        //     let rotateNode = false
+        //     function mousemove() {
+        //         if ((d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0] - mouseDownPos) / 30 > 1) {
+        //             rotateNode = true;
+        //             test += parseInt(clusterRotationValue)
+        //             mouseDownPos = d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0]
+        //         }
+        //         if ((d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0] - mouseDownPos) / 30 < -1) {
+        //             rotateNode = true;
+        //             test -= parseInt(clusterRotationValue)
+        //             mouseDownPos = d3.mouse(document.getElementsByClassName("vertical_chart")[0])[0]
+        //         }
+        //         if (rotateNode) {
+        //             rotateNode = false
+        //             partialContextArray.children = root.children.slice(test, parseInt(test) + parseInt(quantityNodeValue));
+        //             update(partialContextArray);
+        //         }
+        //     }
 
+        //     function mouseup() {
+        //         w.on("mousemove", null).on("mouseup", null);
+        //     }
+        // })
+
+    });
     return (
         <>
             <div className="test">
@@ -1017,7 +1011,6 @@ useEffect(() => {
             </div>
         </>
     );
-
 };
-   
+
 export default TaskTree

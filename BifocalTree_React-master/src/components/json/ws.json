@@ -1,0 +1,1682 @@
+{
+    "id": 100000,
+    "type": "Artistes",
+    "children": [
+        {
+            "id": 0,
+            "type": "artist",
+            "name": "A"
+        },
+        {
+            "id": 1,
+            "type": "artist",
+            "name": "A (エース) (ACE)"
+        },
+        {
+            "id": 2,
+            "type": "artist",
+            "name": "A Balladeer"
+        },
+        {
+            "id": 3,
+            "type": "artist",
+            "name": "A Beautiful Silence"
+        },
+        {
+            "id": 4,
+            "type": "artist",
+            "name": "A Band Called Pain"
+        },
+        {
+            "id": 5,
+            "type": "artist",
+            "name": "A Billion Ernies"
+        },
+        {
+            "id": 6,
+            "type": "artist",
+            "name": "A Bird Flew"
+        },
+        {
+            "id": 7,
+            "type": "artist",
+            "name": "A Black Rose Burial"
+        },
+        {
+            "id": 8,
+            "type": "artist",
+            "name": "A Blinding Silence"
+        },
+        {
+            "id": 9,
+            "type": "artist",
+            "name": "A Boy Named Thor"
+        },
+        {
+            "id": 10,
+            "type": "artist",
+            "name": "A Breath Before Surfacing"
+        },
+        {
+            "id": 11,
+            "type": "artist",
+            "name": "A Brand"
+        },
+        {
+            "id": 12,
+            "type": "artist",
+            "name": "A Broken Tomorrow"
+        },
+        {
+            "id": 13,
+            "type": "artist",
+            "name": "A Broken Silence"
+        },
+        {
+            "id": 14,
+            "type": "artist",
+            "name": "A Bunny's Caravan"
+        },
+        {
+            "id": 15,
+            "type": "artist",
+            "name": "A C Roy"
+        },
+        {
+            "id": 16,
+            "type": "artist",
+            "name": "A Call For Arms"
+        },
+        {
+            "id": 17,
+            "type": "artist",
+            "name": "A Case Of Grenada"
+        },
+        {
+            "id": 18,
+            "type": "artist",
+            "name": "A Camp"
+        },
+        {
+            "id": 19,
+            "type": "artist",
+            "name": "A Chilling Silence"
+        },
+        {
+            "id": 20,
+            "type": "artist",
+            "name": "A Challenge Of Honour"
+        },
+        {
+            "id": 21,
+            "type": "artist",
+            "name": "A Change Of Pace"
+        },
+        {
+            "id": 22,
+            "type": "artist",
+            "name": "A City Serene"
+        },
+        {
+            "id": 23,
+            "type": "artist",
+            "name": "A City Static"
+        },
+        {
+            "id": 24,
+            "type": "artist",
+            "name": "A Covenant Of Thorns"
+        },
+        {
+            "id": 25,
+            "type": "artist",
+            "name": "A Crying Shame"
+        },
+        {
+            "id": 26,
+            "type": "artist",
+            "name": "A Corpse Named Abel"
+        },
+        {
+            "id": 27,
+            "type": "artist",
+            "name": "A Current Affair"
+        },
+        {
+            "id": 28,
+            "type": "artist",
+            "name": "A Cut Below The Rest"
+        },
+        {
+            "id": 29,
+            "type": "artist",
+            "name": "A Cutthroat Kiss"
+        },
+        {
+            "id": 30,
+            "type": "artist",
+            "name": "A Cor Do Som"
+        },
+        {
+            "id": 31,
+            "type": "artist",
+            "name": "A Dark Performance"
+        },
+        {
+            "id": 32,
+            "type": "artist",
+            "name": "A Day Before Sunrise"
+        },
+        {
+            "id": 33,
+            "type": "artist",
+            "name": "A Day In Black And White"
+        },
+        {
+            "id": 34,
+            "type": "artist",
+            "name": "A Day's Refrain"
+        },
+        {
+            "id": 35,
+            "type": "artist",
+            "name": "A Dead God..."
+        },
+        {
+            "id": 36,
+            "type": "artist",
+            "name": "A Day Of Pigs"
+        },
+        {
+            "id": 37,
+            "type": "artist",
+            "name": "A Decent Animal"
+        },
+        {
+            "id": 38,
+            "type": "artist",
+            "name": "A Different Breed Of Killer"
+        },
+        {
+            "id": 39,
+            "type": "artist",
+            "name": "A Dying Daydream"
+        },
+        {
+            "id": 40,
+            "type": "artist",
+            "name": "A Dying Dream"
+        },
+        {
+            "id": 41,
+            "type": "artist",
+            "name": "A Fading Memory"
+        },
+        {
+            "id": 42,
+            "type": "artist",
+            "name": "A Dying God"
+        },
+        {
+            "id": 43,
+            "type": "artist",
+            "name": "A Farewell Rescue"
+        },
+        {
+            "id": 44,
+            "type": "artist",
+            "name": "A Faith Called Chaos"
+        },
+        {
+            "id": 45,
+            "type": "artist",
+            "name": "A Fall To Break"
+        },
+        {
+            "id": 46,
+            "type": "artist",
+            "name": "A Few Good Men"
+        },
+        {
+            "id": 47,
+            "type": "artist",
+            "name": "A Fight Called Hope"
+        },
+        {
+            "id": 48,
+            "type": "artist",
+            "name": "A Foot In Coldwater"
+        },
+        {
+            "id": 49,
+            "type": "artist",
+            "name": "A Fine Boat, That Coffin!"
+        },
+        {
+            "id": 50,
+            "type": "artist",
+            "name": "A Flock Of Seagulls",
+            "children": [
+                {
+                    "id": 51,
+                    "type": "Producer",
+                    "name": "Mike Howlett"
+                },
+                {
+                    "id": 52,
+                    "type": "Producer",
+                    "name": "A Flock of Seagulls"
+                },
+                {
+                    "id": 53,
+                    "type": "Producer",
+                    "name": "Mike Howlett"
+                },
+                {
+                    "id": 54,
+                    "type": "Producer",
+                    "name": "Mike Score"
+                },
+                {
+                    "id": 55,
+                    "type": "Producer",
+                    "name": "Paul Reynolds (musician)"
+                },
+                {
+                    "id": 56,
+                    "type": "Producer",
+                    "name": "A Flock of Seagulls"
+                },
+                {
+                    "id": 57,
+                    "type": "Producer",
+                    "name": "Mike Howlett"
+                },
+                {
+                    "id": 58,
+                    "type": "Producer",
+                    "name": "Bill Nelson (musician)"
+                },
+                {
+                    "id": 59,
+                    "type": "Producer",
+                    "name": "A Flock of Seagulls"
+                },
+                {
+                    "id": 60,
+                    "type": "Producer",
+                    "name": "Mike Howlett"
+                },
+                {
+                    "id": 61,
+                    "type": "Producer",
+                    "name": "A Flock of Seagulls"
+                },
+                {
+                    "id": 62,
+                    "type": "Producer",
+                    "name": "A Flock of Seagulls"
+                },
+                {
+                    "id": 63,
+                    "type": "Producer",
+                    "name": "Mike Score"
+                }
+            ]
+        },
+        {
+            "id": 64,
+            "type": "artist",
+            "name": "A Friend In London"
+        },
+        {
+            "id": 65,
+            "type": "artist",
+            "name": "A Foot In The Grave"
+        },
+        {
+            "id": 66,
+            "type": "artist",
+            "name": "A Genuine Freakshow"
+        },
+        {
+            "id": 67,
+            "type": "artist",
+            "name": "A Frames"
+        },
+        {
+            "id": 68,
+            "type": "artist",
+            "name": "A Giants Moment"
+        },
+        {
+            "id": 69,
+            "type": "artist",
+            "name": "A Girl Called Eddy"
+        },
+        {
+            "id": 70,
+            "type": "artist",
+            "name": "A Girl Called Jane"
+        },
+        {
+            "id": 71,
+            "type": "artist",
+            "name": "A Good Day For Killing"
+        },
+        {
+            "id": 72,
+            "type": "artist",
+            "name": "A Great Big World",
+            "children": [
+                {
+                    "id": 73,
+                    "type": "Producer",
+                    "name": "Dan Romer"
+                },
+                {
+                    "id": 74,
+                    "type": "Producer",
+                    "name": "Ian Axel"
+                },
+                {
+                    "id": 75,
+                    "type": "Producer",
+                    "name": "Dan Romer"
+                },
+                {
+                    "id": 76,
+                    "type": "Producer",
+                    "name": "Ian Axel"
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "type": "artist",
+            "name": "A Great Big Pile Of Leaves"
+        },
+        {
+            "id": 78,
+            "type": "artist",
+            "name": "A Gun Called Tension"
+        },
+        {
+            "id": 79,
+            "type": "artist",
+            "name": "A Heart Fades Forever"
+        },
+        {
+            "id": 80,
+            "type": "artist",
+            "name": "A Guy Called Gerald"
+        },
+        {
+            "id": 81,
+            "type": "artist",
+            "name": "A Halo Called Fred"
+        },
+        {
+            "id": 82,
+            "type": "artist",
+            "name": "A Hole Inside"
+        },
+        {
+            "id": 83,
+            "type": "artist",
+            "name": "A Hope For Home"
+        },
+        {
+            "id": 84,
+            "type": "artist",
+            "name": "A House"
+        },
+        {
+            "id": 85,
+            "type": "artist",
+            "name": "A Kid Named Thompson"
+        },
+        {
+            "id": 86,
+            "type": "artist",
+            "name": "A Jealousy Issue"
+        },
+        {
+            "id": 87,
+            "type": "artist",
+            "name": "A Kidnap In Color"
+        },
+        {
+            "id": 88,
+            "type": "artist",
+            "name": "A La Carte"
+        },
+        {
+            "id": 89,
+            "type": "artist",
+            "name": "A Klana Indiana"
+        },
+        {
+            "id": 90,
+            "type": "artist",
+            "name": "A Lesson Learned"
+        },
+        {
+            "id": 91,
+            "type": "artist",
+            "name": "A Legend Falls"
+        },
+        {
+            "id": 92,
+            "type": "artist",
+            "name": "A Liar Wrote This Symphony"
+        },
+        {
+            "id": 93,
+            "type": "artist",
+            "name": "A Life In Vain"
+        },
+        {
+            "id": 94,
+            "type": "artist",
+            "name": "A Life Like This"
+        },
+        {
+            "id": 95,
+            "type": "artist",
+            "name": "A Life Divided"
+        },
+        {
+            "id": 96,
+            "type": "artist",
+            "name": "A Lost Cause"
+        },
+        {
+            "id": 97,
+            "type": "artist",
+            "name": "A Lost People"
+        },
+        {
+            "id": 98,
+            "type": "artist",
+            "name": "A Loss For Words"
+        },
+        {
+            "id": 99,
+            "type": "artist",
+            "name": "A Love Ends Suicide"
+        },
+        {
+            "id": 100,
+            "type": "artist",
+            "name": "A Media Tea"
+        },
+        {
+            "id": 101,
+            "type": "artist",
+            "name": "A Love Like Pi"
+        },
+        {
+            "id": 102,
+            "type": "artist",
+            "name": "A Million Engines In Neutral"
+        },
+        {
+            "id": 103,
+            "type": "artist",
+            "name": "A Million Dead Birds Laughing"
+        },
+        {
+            "id": 104,
+            "type": "artist",
+            "name": "A Million Kittens, Inc"
+        },
+        {
+            "id": 105,
+            "type": "artist",
+            "name": "A Mind Confused"
+        },
+        {
+            "id": 106,
+            "type": "artist",
+            "name": "A Moment Spent"
+        },
+        {
+            "id": 107,
+            "type": "artist",
+            "name": "A Long Winter"
+        },
+        {
+            "id": 108,
+            "type": "artist",
+            "name": "A Minute Till Midnight"
+        },
+        {
+            "id": 109,
+            "type": "artist",
+            "name": "A Minute To Pray A Second To Die"
+        },
+        {
+            "id": 110,
+            "type": "artist",
+            "name": "A Murder Of Crows"
+        },
+        {
+            "id": 111,
+            "type": "artist",
+            "name": "A New Kind Of American Saint"
+        },
+        {
+            "id": 112,
+            "type": "artist",
+            "name": "A New Challenger Approaches"
+        },
+        {
+            "id": 113,
+            "type": "artist",
+            "name": "A New Dawn"
+        },
+        {
+            "id": 114,
+            "type": "artist",
+            "name": "A Night In Texas"
+        },
+        {
+            "id": 115,
+            "type": "artist",
+            "name": "A New January"
+        },
+        {
+            "id": 116,
+            "type": "artist",
+            "name": "A Novel Form"
+        },
+        {
+            "id": 117,
+            "type": "artist",
+            "name": "A Pale Horse Named Death"
+        },
+        {
+            "id": 118,
+            "type": "artist",
+            "name": "A Petal Fallen"
+        },
+        {
+            "id": 119,
+            "type": "artist",
+            "name": "A Petty Pensieve"
+        },
+        {
+            "id": 120,
+            "type": "artist",
+            "name": "A Place Called Here"
+        },
+        {
+            "id": 121,
+            "type": "artist",
+            "name": "A Perfect Kiss"
+        },
+        {
+            "id": 122,
+            "type": "artist",
+            "name": "A Place To Bury Strangers"
+        },
+        {
+            "id": 123,
+            "type": "artist",
+            "name": "A Pink"
+        },
+        {
+            "id": 124,
+            "type": "artist",
+            "name": "A Promise Worth Dying For"
+        },
+        {
+            "id": 125,
+            "type": "artist",
+            "name": "A Radio With Guts"
+        },
+        {
+            "id": 126,
+            "type": "artist",
+            "name": "A Red Season Shade"
+        },
+        {
+            "id": 127,
+            "type": "artist",
+            "name": "A Red Dawn"
+        },
+        {
+            "id": 128,
+            "type": "artist",
+            "name": "A Rotterdam November"
+        },
+        {
+            "id": 129,
+            "type": "artist",
+            "name": "A Rocket To The Moon"
+        },
+        {
+            "id": 130,
+            "type": "artist",
+            "name": "A Second Chance"
+        },
+        {
+            "id": 131,
+            "type": "artist",
+            "name": "A Silent Express"
+        },
+        {
+            "id": 132,
+            "type": "artist",
+            "name": "A Silent Film"
+        },
+        {
+            "id": 133,
+            "type": "artist",
+            "name": "A Skyline Fracture"
+        },
+        {
+            "id": 134,
+            "type": "artist",
+            "name": "A Small Victory"
+        },
+        {
+            "id": 135,
+            "type": "artist",
+            "name": "A Smile That Fades"
+        },
+        {
+            "id": 136,
+            "type": "artist",
+            "name": "A Skylit Drive"
+        },
+        {
+            "id": 137,
+            "type": "artist",
+            "name": "A Spell Inside"
+        },
+        {
+            "id": 138,
+            "type": "artist",
+            "name": "A Step Behind"
+        },
+        {
+            "id": 139,
+            "type": "artist",
+            "name": "A Stained Glass Romance"
+        },
+        {
+            "id": 140,
+            "type": "artist",
+            "name": "A Straight Line"
+        },
+        {
+            "id": 141,
+            "type": "artist",
+            "name": "A Study In Scarlet"
+        },
+        {
+            "id": 142,
+            "type": "artist",
+            "name": "A Suken Ship Irony"
+        },
+        {
+            "id": 143,
+            "type": "artist",
+            "name": "A Suburban Blood Drive"
+        },
+        {
+            "id": 144,
+            "type": "artist",
+            "name": "A Talking Fish"
+        },
+        {
+            "id": 145,
+            "type": "artist",
+            "name": "A Sunny Day In Glasgow"
+        },
+        {
+            "id": 146,
+            "type": "artist",
+            "name": "A Storybook Ending"
+        },
+        {
+            "id": 147,
+            "type": "artist",
+            "name": "A Thorn For Every Heart"
+        },
+        {
+            "id": 148,
+            "type": "artist",
+            "name": "A B Turbo"
+        },
+        {
+            "id": 149,
+            "type": "artist",
+            "name": "A Band Of Orcs"
+        },
+        {
+            "id": 150,
+            "type": "artist",
+            "name": "A Beautiful Demise"
+        },
+        {
+            "id": 151,
+            "type": "artist",
+            "name": "A Banda Mais Bonita Da Cidade"
+        },
+        {
+            "id": 152,
+            "type": "artist",
+            "name": "A Beginnings End"
+        },
+        {
+            "id": 153,
+            "type": "artist",
+            "name": "A Bird A Sparrow"
+        },
+        {
+            "id": 154,
+            "type": "artist",
+            "name": "A Birthday Party Band"
+        },
+        {
+            "id": 155,
+            "type": "artist",
+            "name": "A Blind Prophecy"
+        },
+        {
+            "id": 156,
+            "type": "artist",
+            "name": "A Bloody Canvas"
+        },
+        {
+            "id": 157,
+            "type": "artist",
+            "name": "A Boy And His Kite"
+        },
+        {
+            "id": 158,
+            "type": "artist",
+            "name": "A Breakaway"
+        },
+        {
+            "id": 159,
+            "type": "artist",
+            "name": "A Blue Ocean Dream"
+        },
+        {
+            "id": 160,
+            "type": "artist",
+            "name": "A Brokeheart Pro"
+        },
+        {
+            "id": 161,
+            "type": "artist",
+            "name": "A Bullet For Pretty Boy"
+        },
+        {
+            "id": 162,
+            "type": "artist",
+            "name": "A Cadence Of Sorts"
+        },
+        {
+            "id": 163,
+            "type": "artist",
+            "name": "A Burning Water"
+        },
+        {
+            "id": 164,
+            "type": "artist",
+            "name": "A Canorous Quintet"
+        },
+        {
+            "id": 165,
+            "type": "artist",
+            "name": "A Christmas Carol"
+        },
+        {
+            "id": 166,
+            "type": "artist",
+            "name": "A Certain Ratio"
+        },
+        {
+            "id": 167,
+            "type": "artist",
+            "name": "A Circle Of Saturn"
+        },
+        {
+            "id": 168,
+            "type": "artist",
+            "name": "A Colder Year"
+        },
+        {
+            "id": 169,
+            "type": "artist",
+            "name": "A Contrail To Follow"
+        },
+        {
+            "id": 170,
+            "type": "artist",
+            "name": "A Colour Cold Black"
+        },
+        {
+            "id": 171,
+            "type": "artist",
+            "name": "A Cuatro Patas"
+        },
+        {
+            "id": 172,
+            "type": "artist",
+            "name": "A Contraverso"
+        },
+        {
+            "id": 173,
+            "type": "artist",
+            "name": "A Cursive Memory"
+        },
+        {
+            "id": 174,
+            "type": "artist",
+            "name": "A Dawn Serene"
+        },
+        {
+            "id": 175,
+            "type": "artist",
+            "name": "A Dark Halo"
+        },
+        {
+            "id": 176,
+            "type": "artist",
+            "name": "A Day Late"
+        },
+        {
+            "id": 177,
+            "type": "artist",
+            "name": "A Day In The Life"
+        },
+        {
+            "id": 178,
+            "type": "artist",
+            "name": "A Day Away"
+        },
+        {
+            "id": 179,
+            "type": "artist",
+            "name": "A Thousand Times Repent"
+        },
+        {
+            "id": 180,
+            "type": "artist",
+            "name": "A Thousand Times No"
+        },
+        {
+            "id": 181,
+            "type": "artist",
+            "name": "A Textbook Tragedy"
+        },
+        {
+            "id": 182,
+            "type": "artist",
+            "name": "A Tiro"
+        },
+        {
+            "id": 183,
+            "type": "artist",
+            "name": "A Través Del Cielo"
+        },
+        {
+            "id": 184,
+            "type": "artist",
+            "name": "A Tribe Called Quest",
+            "children": [
+                {
+                    "id": 185,
+                    "type": "Producer",
+                    "name": "A Tribe Called Quest"
+                },
+                {
+                    "id": 186,
+                    "type": "Producer",
+                    "name": "A Tribe Called Quest"
+                },
+                {
+                    "id": 187,
+                    "type": "Producer",
+                    "name": "J Dilla"
+                },
+                {
+                    "id": 188,
+                    "type": "Producer",
+                    "name": "Q-Tip (musician)"
+                },
+                {
+                    "id": 189,
+                    "type": "Producer",
+                    "name": "A Tribe Called Quest"
+                }
+            ]
+        },
+        {
+            "id": 190,
+            "type": "artist",
+            "name": "A Tu Puta Kara"
+        },
+        {
+            "id": 191,
+            "type": "artist",
+            "name": "A Turma Do Balão Mágico"
+        },
+        {
+            "id": 192,
+            "type": "artist",
+            "name": "A Weather"
+        },
+        {
+            "id": 193,
+            "type": "artist",
+            "name": "A Week In July"
+        },
+        {
+            "id": 194,
+            "type": "artist",
+            "name": "A Whisper In The Noise"
+        },
+        {
+            "id": 195,
+            "type": "artist",
+            "name": "A'la Rock"
+        },
+        {
+            "id": 196,
+            "type": "artist",
+            "name": "A*Teens",
+            "children": [
+                {
+                    "id": 197,
+                    "type": "Producer",
+                    "name": "Benny Andersson"
+                },
+                {
+                    "id": 198,
+                    "type": "Producer",
+                    "name": "Björn Ulvaeus"
+                },
+                {
+                    "id": 199,
+                    "type": "Producer",
+                    "name": "Stig Anderson"
+                },
+                {
+                    "id": 200,
+                    "type": "Producer",
+                    "name": "Benny Andersson"
+                },
+                {
+                    "id": 201,
+                    "type": "Producer",
+                    "name": "Björn Ulvaeus"
+                },
+                {
+                    "id": 202,
+                    "type": "Producer",
+                    "name": "UB40"
+                },
+                {
+                    "id": 203,
+                    "type": "Producer",
+                    "name": "George David Weiss"
+                },
+                {
+                    "id": 204,
+                    "type": "Producer",
+                    "name": "Hugo Peretti"
+                },
+                {
+                    "id": 205,
+                    "type": "Producer",
+                    "name": "Luigi Creatore"
+                },
+                {
+                    "id": 206,
+                    "type": "Producer",
+                    "name": "Sylvia Robinson"
+                },
+                {
+                    "id": 207,
+                    "type": "Producer",
+                    "name": "Benny Andersson"
+                },
+                {
+                    "id": 208,
+                    "type": "Producer",
+                    "name": "Björn Ulvaeus"
+                },
+                {
+                    "id": 209,
+                    "type": "Producer",
+                    "name": "Tim Rice"
+                },
+                {
+                    "id": 210,
+                    "type": "Producer",
+                    "name": "Vinylshakerz"
+                },
+                {
+                    "id": 211,
+                    "type": "Producer",
+                    "name": "Benny Andersson"
+                },
+                {
+                    "id": 212,
+                    "type": "Producer",
+                    "name": "Björn Ulvaeus"
+                },
+                {
+                    "id": 213,
+                    "type": "Producer",
+                    "name": "Tim Rice"
+                },
+                {
+                    "id": 214,
+                    "type": "Producer",
+                    "name": "UB40"
+                },
+                {
+                    "id": 215,
+                    "type": "Producer",
+                    "name": "George David Weiss"
+                },
+                {
+                    "id": 216,
+                    "type": "Producer",
+                    "name": "Hugo Peretti"
+                },
+                {
+                    "id": 217,
+                    "type": "Producer",
+                    "name": "Luigi Creatore"
+                },
+                {
+                    "id": 218,
+                    "type": "Producer",
+                    "name": "Cathy Dennis"
+                },
+                {
+                    "id": 219,
+                    "type": "Producer",
+                    "name": "Benny Andersson"
+                },
+                {
+                    "id": 220,
+                    "type": "Producer",
+                    "name": "Björn Ulvaeus"
+                },
+                {
+                    "id": 221,
+                    "type": "Producer",
+                    "name": "Stig Anderson"
+                },
+                {
+                    "id": 222,
+                    "type": "Producer",
+                    "name": "Benny Andersson"
+                },
+                {
+                    "id": 223,
+                    "type": "Producer",
+                    "name": "Björn Ulvaeus"
+                },
+                {
+                    "id": 224,
+                    "type": "Producer",
+                    "name": "Cathy Dennis"
+                },
+                {
+                    "id": 225,
+                    "type": "Producer",
+                    "name": "UB40"
+                },
+                {
+                    "id": 226,
+                    "type": "Producer",
+                    "name": "George David Weiss"
+                },
+                {
+                    "id": 227,
+                    "type": "Producer",
+                    "name": "Hugo Peretti"
+                },
+                {
+                    "id": 228,
+                    "type": "Producer",
+                    "name": "Luigi Creatore"
+                }
+            ]
+        },
+        {
+            "id": 229,
+            "type": "artist",
+            "name": "A-Bros"
+        },
+        {
+            "id": 230,
+            "type": "artist",
+            "name": "A-ha",
+            "children": [
+                {
+                    "id": 231,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 232,
+                    "type": "Producer",
+                    "name": "John Ratcliff (bookbinder)"
+                },
+                {
+                    "id": 233,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 234,
+                    "type": "Producer",
+                    "name": "Magne Furuholmen"
+                },
+                {
+                    "id": 235,
+                    "type": "Producer",
+                    "name": "Morten Harket"
+                },
+                {
+                    "id": 236,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 237,
+                    "type": "Producer",
+                    "name": "Tony Mansfield"
+                },
+                {
+                    "id": 238,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 239,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 240,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 241,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 242,
+                    "type": "Producer",
+                    "name": "John Ratcliff (bookbinder)"
+                },
+                {
+                    "id": 243,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 244,
+                    "type": "Producer",
+                    "name": "Magne Furuholmen"
+                },
+                {
+                    "id": 245,
+                    "type": "Producer",
+                    "name": "Morten Harket"
+                },
+                {
+                    "id": 246,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 247,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 248,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 249,
+                    "type": "Producer",
+                    "name": "Tony Mansfield"
+                },
+                {
+                    "id": 250,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 251,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 252,
+                    "type": "Producer",
+                    "name": "John Ratcliff (bookbinder)"
+                },
+                {
+                    "id": 253,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 254,
+                    "type": "Producer",
+                    "name": "Magne Furuholmen"
+                },
+                {
+                    "id": 255,
+                    "type": "Producer",
+                    "name": "Morten Harket"
+                },
+                {
+                    "id": 256,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 257,
+                    "type": "Producer",
+                    "name": "Tony Mansfield"
+                },
+                {
+                    "id": 258,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 259,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 260,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 261,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 262,
+                    "type": "Producer",
+                    "name": "Magne Furuholmen"
+                },
+                {
+                    "id": 263,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 264,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 265,
+                    "type": "Producer",
+                    "name": "Magne Furuholmen"
+                },
+                {
+                    "id": 266,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 267,
+                    "type": "Producer",
+                    "name": "Alan Tarney"
+                },
+                {
+                    "id": 268,
+                    "type": "Producer",
+                    "name": "Magne Furuholmen"
+                },
+                {
+                    "id": 269,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 270,
+                    "type": "Producer",
+                    "name": "Magne Furuholmen"
+                },
+                {
+                    "id": 271,
+                    "type": "Producer",
+                    "name": "John Barry (composer)"
+                },
+                {
+                    "id": 272,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 273,
+                    "type": "Producer",
+                    "name": "Paul Waaktaar-Savoy"
+                },
+                {
+                    "id": 274,
+                    "type": "Producer",
+                    "name": "John Barry"
+                },
+                {
+                    "id": 275,
+                    "type": "Producer",
+                    "name": "Christopher Neil"
+                },
+                {
+                    "id": 276,
+                    "type": "Producer",
+                    "name": "Carole King"
+                },
+                {
+                    "id": 277,
+                    "type": "Producer",
+                    "name": "Howard Greenfield"
+                }
+            ]
+        },
+        {
+            "id": 278,
+            "type": "artist",
+            "name": "A-Bomb"
+        },
+        {
+            "id": 279,
+            "type": "artist",
+            "name": "A$AP Rocky",
+            "children": [
+                {
+                    "id": 280,
+                    "type": "Producer",
+                    "name": "Drake (rapper)"
+                },
+                {
+                    "id": 281,
+                    "type": "Producer",
+                    "name": "Noah %2240%22 Shebib"
+                },
+                {
+                    "id": 282,
+                    "type": "Producer",
+                    "name": "Jim Jonsin"
+                },
+                {
+                    "id": 283,
+                    "type": "Producer",
+                    "name": "Héctor el Father"
+                },
+                {
+                    "id": 284,
+                    "type": "Producer",
+                    "name": "Finatik N Zac"
+                },
+                {
+                    "id": 285,
+                    "type": "Producer",
+                    "name": "ASAP Rocky"
+                },
+                {
+                    "id": 286,
+                    "type": "Producer",
+                    "name": "Bobbie Gentry"
+                },
+                {
+                    "id": 287,
+                    "type": "Producer",
+                    "name": "ASAP Rocky"
+                },
+                {
+                    "id": 288,
+                    "type": "Producer",
+                    "name": "Schoolboy Q"
+                },
+                {
+                    "id": 289,
+                    "type": "Producer",
+                    "name": "ASAP Rocky"
+                },
+                {
+                    "id": 290,
+                    "type": "Producer",
+                    "name": "Lil Wayne"
+                },
+                {
+                    "id": 291,
+                    "type": "Producer",
+                    "name": "Mike Dean (record producer)"
+                }
+            ]
+        },
+        {
+            "id": 292,
+            "type": "artist",
+            "name": "A-Trak",
+            "children": [
+                {
+                    "id": 293,
+                    "type": "Producer",
+                    "name": "A-Trak"
+                },
+                {
+                    "id": 294,
+                    "type": "Producer",
+                    "name": "Kanye West"
+                },
+                {
+                    "id": 295,
+                    "type": "Producer",
+                    "name": "Juicy J"
+                },
+                {
+                    "id": 296,
+                    "type": "Producer",
+                    "name": "Project Pat"
+                },
+                {
+                    "id": 297,
+                    "type": "Producer",
+                    "name": "DJ Paul"
+                },
+                {
+                    "id": 298,
+                    "type": "Producer",
+                    "name": "A-Trak"
+                },
+                {
+                    "id": 299,
+                    "type": "Producer",
+                    "name": "Kid Sister"
+                }
+            ]
+        },
+        {
+            "id": 300,
+            "type": "artist",
+            "name": "A-Wax"
+        },
+        {
+            "id": 301,
+            "type": "artist",
+            "name": "A-Yes"
+        },
+        {
+            "id": 302,
+            "type": "artist",
+            "name": "A Day To Remember",
+            "children": [
+                {
+                    "id": 303,
+                    "type": "Producer",
+                    "name": "Andrew Wade"
+                },
+                {
+                    "id": 304,
+                    "type": "Producer",
+                    "name": "Jeremy McKinnon"
+                },
+                {
+                    "id": 305,
+                    "type": "Producer",
+                    "name": "Chad Gilbert"
+                },
+                {
+                    "id": 306,
+                    "type": "Producer",
+                    "name": "Jeremy McKinnon"
+                },
+                {
+                    "id": 307,
+                    "type": "Producer",
+                    "name": "Chad Gilbert"
+                },
+                {
+                    "id": 308,
+                    "type": "Producer",
+                    "name": "Andrew Wade"
+                },
+                {
+                    "id": 309,
+                    "type": "Producer",
+                    "name": "Chad Gilbert"
+                },
+                {
+                    "id": 310,
+                    "type": "Producer",
+                    "name": "Andrew Wade"
+                },
+                {
+                    "id": 311,
+                    "type": "Producer",
+                    "name": "Jeremy McKinnon"
+                },
+                {
+                    "id": 312,
+                    "type": "Producer",
+                    "name": "Andrew Wade"
+                },
+                {
+                    "id": 313,
+                    "type": "Producer",
+                    "name": "Chad Gilbert"
+                },
+                {
+                    "id": 314,
+                    "type": "Producer",
+                    "name": "Jeremy McKinnon"
+                }
+            ]
+        },
+        {
+            "id": 315,
+            "type": "artist",
+            "name": "A Dead Letter Promise"
+        },
+        {
+            "id": 316,
+            "type": "artist",
+            "name": "A Dead Giveaway"
+        },
+        {
+            "id": 317,
+            "type": "artist",
+            "name": "A Dead Silence"
+        },
+        {
+            "id": 318,
+            "type": "artist",
+            "name": "A Decade To Die For"
+        },
+        {
+            "id": 319,
+            "type": "artist",
+            "name": "A Death Among Heroes"
+        },
+        {
+            "id": 320,
+            "type": "artist",
+            "name": "A Death For Every Sin"
+        },
+        {
+            "id": 321,
+            "type": "artist",
+            "name": "A Delicate Disaster"
+        },
+        {
+            "id": 322,
+            "type": "artist",
+            "name": "A Destructive Issue"
+        },
+        {
+            "id": 323,
+            "type": "artist",
+            "name": "A Dozen Furies"
+        },
+        {
+            "id": 324,
+            "type": "artist",
+            "name": "A Dream Called Ocean"
+        },
+        {
+            "id": 325,
+            "type": "artist",
+            "name": "A Drum And An Open Window"
+        },
+        {
+            "id": 326,
+            "type": "artist",
+            "name": "A Dream Too Late"
+        },
+        {
+            "id": 327,
+            "type": "artist",
+            "name": "A Dream Of Poe"
+        },
+        {
+            "id": 328,
+            "type": "artist",
+            "name": "A Fall Farewell"
+        },
+        {
+            "id": 329,
+            "type": "artist",
+            "name": "A Farewell To Arms"
+        },
+        {
+            "id": 330,
+            "type": "artist",
+            "name": "A Few Too Short"
+        },
+        {
+            "id": 331,
+            "type": "artist",
+            "name": "A Final Misconception"
+        }
+    ]
+}

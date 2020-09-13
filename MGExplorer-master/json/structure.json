@@ -1,0 +1,31 @@
+{
+"info": { 
+       "qtNodos": 16,
+       "qtArestas": 30
+       },
+"nodes" : { 
+           "labelTitle": [ "Short Name", "Author Name", "Category", "Research", "Area"],
+           "valueTitle": [ "Year last Pub.","Qt Research","Qt Area","Qt Publications"],
+           "imageTitle": null,
+           "dataNodes": [
+               { "id":0,"idBD":0, "labels":["Nunes, R. C.","Raul Ceretta Nunes","Participante Externo","Tolerancia a Falhas","SISTEMAS DE COMPUTACAO"],
+                           "values":[2004,1,1,1],"images":null },
+               { "id":1,"idBD":1, "labels":["JANSCH-PORTO, I.","Ingrid Eleonora Schreiber Jansch Porto","Docente","Tolerancia a Falhas","SISTEMAS DE COMPUTACAO"],
+                           "values":[2004,3,3,3],"images":null },
+               { "id":2,"idBD":2, "labels":["Damas, T. P.","Thiago Pinto Damas","Discente","Tolerancia a Falhas","SISTEMAS DE COMPUTACAO"],
+                           "values":[2004,1,1,1] },
+               { "id":3,"idBD":3, "labels":["FILHO, N. D.","Nelson Duarte Filho","Participante Externo","Tolerancia a Falhas","SISTEMAS DE COMPUTACAO"],
+                           "values":[2004,1,1,1] },
+               { "id":4,"idBD":4, "labels":["GOULART, M. D.","Mario Domenech Goulart","Discente","Tolerancia a Falhas","SISTEMAS DE COMPUTACAO"],
+                           "values":[2004,1,1,1] }
+           ]
+        },
+      "edges" : { 
+           "labelTitle": null,
+           "valueTitle": [ "Qt Publications","Qt Journals","Qt Books", "Qt Proceedings","2004"],
+           "dataEdges": [
+                  { "src":1, "tgt":3, "labels":null, "values":[1,0,0,1,1] },
+                  { "src":2, "tgt":4, "labels":null, "values":[1,0,0,1,1] }
+           ]
+        }
+}
